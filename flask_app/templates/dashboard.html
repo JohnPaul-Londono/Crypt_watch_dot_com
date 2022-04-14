@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Dashboard</title>
+</head>
+<body>
+    <!-- navbar rules -->
+    <div class="navbar">
+        <div class="welcome">
+            <h1>{{users.first_name}}</h1>
+        </div>
+        <div class="resources"> 
+            <p><a href="/resources" class="resources" style="color: white">Resources</a></p>
+        </div>
+        <div class="logout">
+            <a class="logout" href="/logout" style="color: white">Logout</a>  
+        </div>
+    </div>
+    <!-- container rules -->
+    <div class="maincontainer">
+        <div class="leftbox">
+            <div class="newcrypto">
+                <a class="newcrypto" href="/NewCrypto" style="color: white" >Add New Crypto</a>
+            </div>
+            <div class="watchlist">
+                <label for="crypto">Watchlist</label>
+            </div>
+            <div class="cryptotable">
+                <table class="cryptotable">
+                    {% for c in cryptos %}
+                        <tr>
+                            {% if c.id == session["users_id"] %}
+                                <td> <a href="/dashboard" class ="linestyle1" style="color: white">{{c.name.name}}</a></td>
+                                <td>
+                                    <a class ="linestyle2" href="/delete/{{c.name.id}}"  style="color: rgb(120,144,169)" >Delete |</a>
+                                    <a class ="linestyle2" href="/edit/{{c.name.id}}"  style="color: rgb(120,144,169)" >Edit</a>
+                            {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+        <div class="middlebox">
+        </div>
+        <div class="rightbox">
+            <div class="viewcoin">
+                <label for="crypto">Coin Information</label>
+            </div>
+            <div class="cryptotableright">
+                <table class="cryptotableright">
+                        <tr>
+                            <td>Name</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Last Price</td>
+                            <td>Lorem.</td>
+                        </tr>
+                        <tr>
+                            <td>Last Price Date</td>
+                            <td>Lorem.</td>
+                        </tr>
+                        <tr>
+                            <td>Target Buy</td>
+                            <td>Lorem.</td>
+                        </tr>
+                        <tr>
+                            <td>Target Buy Date</td>
+                            <td>Lorem.</td>
+                        </tr>
+                        <tr>
+                            <td>Target Sell</td>
+                            <td>Lorem.</td>
+                        </tr>
+                        <tr>
+                            <td>Target Sell Date</td>
+                            <td>Lorem.</td>
+                        </tr>
+                        <tr>
+                            <td>Notes</td>
+                            <td>Lorem.</td>
+                        </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- bottom nav -->
+    <div id="navbottom"></div>
+</body>
+</html>

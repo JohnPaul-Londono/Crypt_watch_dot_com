@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/edit_style.css') }}">
+    <title>Edit Crypto Coin</title>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p style="color:rgb(255, 255, 255)">{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}   
+    <div class="navbar">
+        <a class="dashboard" style="color: white" href="/dashboard">Dashboard</a>
+        <a class="logout" style="color: rgb(255, 255, 255)" href="/logout">Logout</a>
+    </div>
+    <div class="container">
+        <form action="/updatecrypto/{{oc.id}}" method="POST">
+            <div><label for="name">Name: </label></div>
+            <div class="inputtext"><input type="text" name="name" value="{{oc.name}}" ></div>
+            <div><label for="current_price">Current Price: </label></div>
+            <div class="inputtext"><input type="text" name="current_price" value="{{oc.current_price}}"></body></div>
+            <div><label for="current_price_date">Current Price Date: </label></div>
+            <div class="inputtext"><input type="date" name="current_price_date" value="{{oc.current_price_date}}" ></div>
+            <div><label for="target_price_buy">Target Price Buy: </label></div>
+            <div class="inputtext"><input type="text" name="target_price_buy" value="{{oc.target_price_buy}}"></div>
+            <div><label for="target_price_buy_date">Target Price Buy Date: </label></div>
+            <div class="inputtext"><input type="date" name="target_price_buy_date" value="{{oc.target_price_buy_date}}" ></div>
+            <div><label for="target_price_sell">Target Price Sell: </label></div>
+            <div class="inputtext"><input type="text" name="target_price_sell" value="{{oc.target_price_sell}}"></div>
+            <div><label for="target_price_sell_date">Target Price Sell Date: </label></div>
+            <div class="inputtext"><input type="date" name="target_price_sell_date" value="{{oc.target_price_sell_date}}"></div>
+            <div><label for="notes">Notes </label></div>
+            <div class="inputtext"><textarea name="notes" cols="35" rows="7">{{oc.notes}}</textarea></div>
+            <div><button value="submit"  class="btn">Update Coin</button></div>
+        </form>
+    </div>
+    <!-- bottom nav -->
+    <div id="navbottom"></div>
+</body>
+</html>

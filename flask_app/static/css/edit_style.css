@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400&display=swap');
+*{
+    font-family: 'Josefin Sans', sans-serif;
+}
+html {
+    min-height: 100%;
+}
+body{
+    margin: 0 auto;
+    /* background-color: rgb(0, 0, 0); */
+    background: linear-gradient(330deg, rgb(112, 112, 112) 10%, black 90%);
+    color: white;
+    padding: 0px 0px 0px 0px;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 20px;
+}
+
+.dashboard{
+    text-decoration: none;
+    font-size: 17px;
+    text-shadow: 3px 3px 2px #000000;
+}
+
+.logout{
+    text-decoration: none;
+    text-shadow: 3px 3px 2px #000000;
+}
+
+
+
+.container{
+    margin: 0 auto;
+    width: 350px;
+    background:linear-gradient(130deg, rgb(153, 153, 153) 10%, rgba(0, 0, 0, 0.411) 90%);
+    box-shadow: rgba(255, 255, 255, 0.349) 10px 10px 20px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    text-align: center;
+    padding:15px; 
+}
+
+.inputtext{
+    margin-bottom: 7px;
+}
+.btn{
+    background: linear-gradient(135deg, rgb(255, 255, 255) 20%, #818382 80%) ;
+    color: rgba(43, 42, 42, 0.801);;
+    padding:5px;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+/* nav bottom */
+#navbottom{
+    background-color: #ffffff8c;
+    min-height: 30px;
+    width: 100%; 
+    bottom: 0px;
+    position: fixed;
+}
